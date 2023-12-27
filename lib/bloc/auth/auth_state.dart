@@ -25,6 +25,7 @@ class AuthState extends Equatable {
           isFirstEntry: false,
         );
 
+
   const AuthState.register()
       : this._(
           status: AuthStatus.register,

@@ -39,6 +39,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
       Future.delayed(const Duration(seconds: 2)).then((_) =>
           NavigateUtil().navigateToView(context, state.status.firstView));
     });
+
   }
 
   @override

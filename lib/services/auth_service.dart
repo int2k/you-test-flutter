@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
 
-import 'package:email_validator/email_validator.dart';
 import 'package:youappflutter/constants/network_enums.dart';
 import 'package:youappflutter/models/auth_model.dart';
 import 'package:youappflutter/models/login_model.dart';
@@ -35,7 +33,9 @@ class AuthService extends IAuthService {
       } else {
         return throw Exception();
       }
-    } on Exception catch (err) {
+    } on Exception {
+      rethrow;
+    } catch (err) {
       rethrow;
     }
   }
@@ -63,7 +63,9 @@ class AuthService extends IAuthService {
       } else {
         return throw Exception();
       }
-    } on Exception catch (err) {
+    } on Exception {
+      rethrow;
+    } catch (err) {
       rethrow;
     }
   }

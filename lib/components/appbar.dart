@@ -3,9 +3,9 @@ import 'package:youappflutter/components/custom_text.dart';
 import 'package:youappflutter/constants/color_constant.dart';
 import 'package:youappflutter/constants/icon_enums.dart';
 import 'package:youappflutter/constants/string_constant.dart';
-import 'package:youappflutter/extensions/context_extensions.dart';
-import 'package:youappflutter/extensions/image_extensions.dart';
 import 'package:youappflutter/extensions/num_extensions.dart';
+import 'package:youappflutter/extensions/image_extensions.dart';
+import 'package:youappflutter/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youappflutter/views/login/login_view.dart';
@@ -27,7 +27,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
       elevation: 1,
       leadingWidth: 120,
       leading: ElevatedButton.icon(
@@ -39,35 +38,22 @@ class _CustomAppBarState extends State<CustomAppBar> {
           backgroundColor: Colors.transparent,
         ),
       ),
-      // flexibleSpace: Container(
-      //   clipBehavior: Clip.antiAlias,
-      //   decoration: ShapeDecoration(
-      //     gradient: RadialGradient(
-      //       center: Alignment(0.58, 0.83),
-      //       radius: 0.35,
-      //       colors: [Color(0xFF1F4247), Color(0xFF0D1C22), Color(0xFF09141A)],
-      //     ),
-      //     shape: ContinuousRectangleBorder(
-      //       borderRadius: BorderRadius.circular(0),
-      //     ),
-      //   ),
-      // ),
-      // title: Row(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   children: [
-      //     Image.asset(
-      //       IconEnums.appLogo.iconName.toPng,
-      //       height: context.dynamicHeight(0.03),
-      //       width: context.dynamicWidth(0.06),
-      //     ),
-      //     7.pw,
-      //     CustomText(
-      //       StringConstants.appName,
-      //       textStyle: context.textTheme.headlineSmall,
-      //
-      //     ),
-      //   ],
-      // ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            IconEnums.appLogo.iconName.toPng,
+            height: context.dynamicHeight(0.03),
+            width: context.dynamicWidth(0.06),
+          ),
+          7.pw,
+          CustomText(
+            StringConstants.appName,
+            textStyle: context.textTheme.headlineSmall,
+
+          ),
+        ],
+      ),
       actions: [
         widget.isHome
             ? IconButton(

@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youappflutter/bloc/auth/auth_bloc.dart';
-import 'package:youappflutter/bloc/home/home_bloc.dart';
 import 'package:youappflutter/constants/string_constant.dart';
 import 'package:youappflutter/init/cache/auth_cache_manager.dart';
 import 'package:youappflutter/init/network/dio_manager.dart';
@@ -35,15 +34,14 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
         textTheme: const TextTheme(
-          headline1: TextStyle(color: Colors.white),
-          headline2: TextStyle(color: Colors.white),
-          bodyText2: TextStyle(color: Colors.white),
-          subtitle1: TextStyle(color: Colors.white),
+          displayLarge: TextStyle(color: Colors.white),
+          displayMedium: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white),
+          titleMedium: TextStyle(color: Colors.white),
         ),
         // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.white,
-          // ···
           brightness: Brightness.dark,
         ),
       ),

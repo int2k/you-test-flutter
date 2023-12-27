@@ -1,11 +1,9 @@
-import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 import 'package:youappflutter/constants/auth_enums.dart';
 import 'package:youappflutter/init/cache/auth_cache_manager.dart';
 import 'package:youappflutter/services/interface_auth_service.dart';
@@ -65,6 +63,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await authCacheManager.signOut();
         emit(const AuthState.guest());
       } catch (_) {}
+    });
+
+    on<LoginStarted>((event, emit) async {
+      try {
+        emit(const AuthState.guest());
+      } catch (e) {
+        log(e.toString());
+        emit(const AuthState.error());
+      }
     });
 
     on<RegisterStarted>((event, emit) async {

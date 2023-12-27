@@ -31,17 +31,19 @@ class TextFormFieldWidget extends StatefulWidget {
 }
 
 class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
+
   @override
   Widget build(BuildContext context) {
+    var emptyText = widget.title?.isEmpty ?? false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         20.ph,
-        CustomText(
+        if (emptyText) CustomText(
           widget.title ?? "",
           textStyle: context.textTheme.titleMedium,
         ),
-        10.ph,
+        if (emptyText) 10.ph,
         TextFormField(
           controller: widget.controller,
           keyboardType: widget.keyboardType,
@@ -55,13 +57,16 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
             errorStyle: GoogleFonts.inter(),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: ColorConstants.inputBorder.withOpacity(0.21))),
+                borderSide: BorderSide(
+                    color: ColorConstants.inputBorder.withOpacity(0.21))),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
-                borderSide: const BorderSide(color: ColorConstants.inputBorder)),
+                borderSide: const BorderSide(
+                    color: ColorConstants.inputBorder)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
-                borderSide: const BorderSide(color: ColorConstants.inputBorder)),
+                borderSide: const BorderSide(
+                    color: ColorConstants.inputBorder)),
             errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide: const BorderSide(color: Colors.red)),
